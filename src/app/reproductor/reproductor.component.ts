@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-reproductor',
@@ -11,17 +12,11 @@ export class ReproductorComponent {
 
   indice: string = "";
 
-  dataSongs: object[] = [
-
-    { "titulo": 'Starboy', "archivo": "/assets/Starboy.mp3", "caratula":'assets/Starboy.jpg'},
-    { "titulo": 'Happy', "archivo": "/assets/Happy.mp3", "caratula": 'assets/Happy.jpg'},
-    { "title": 'Come and get Your love', "archivo": "/assets/Come and get your love.mp3", "caratula":'assets/RedBone_Come_and_get.jpg'},
-    { "titulo": 'Undisclose disers', "archivo": "/assets/Undisclosed desires.mp3", "caratula": 'assets/Undisclosed_desires.jpg'}
-  ];
+  dataSongs :object[] = this._data.getListaCanciones();
 
 
 
-  constructor(public _route: ActivatedRoute) {
+  constructor(public _route: ActivatedRoute, public _data: DataService) {
 
     this.indice = _route.snapshot.params["cancion"];
 

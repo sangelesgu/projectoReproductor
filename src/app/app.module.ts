@@ -8,6 +8,7 @@ import { ReproductorComponent } from './reproductor/reproductor.component';
 import { NofoundComponent } from './nofound/nofound.component';
 import { ListaComponent } from './lista/lista.component';
 import { FooterComponent } from './footer/footer.component';
+import { DataService } from './services/data.service';
 
 const RouterConfig: Routes = [
 
@@ -32,7 +33,7 @@ const RouterConfig: Routes = [
     BrowserModule,
     RouterModule.forRoot(RouterConfig, {useHash: true})
   ],
-  providers: [],
+  providers: [ DataService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

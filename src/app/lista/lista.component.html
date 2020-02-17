@@ -1,104 +1,85 @@
 <app-navbar></app-navbar>
-<!-- <app-sidebar></app-sidebar> -->
 
 
-
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-2 text-left">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">
-              <i class="fas fa-home"></i>
-              Inicio
-            </a>
-          </li>
-          <li class="nav-item sidebar">
-            <a class="nav-link" href="#">
-              <i class="fas fa-search"></i>
-              Buscar
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fas fa-list"></i>
-              Lists</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2 text-left">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">
+            <i class="fas fa-home"></i>
+            Inicio
+          </a>
+        </li>
+        <li class="nav-item sidebar">
+          <a class="nav-link" href="#">
+            <i class="fas fa-search"></i>
+            Buscar
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-list"></i>
+            Lists</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
             Playlist</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fas fa-plus"></i>
-              Crear playlist</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fas fa-heart"></i>
-              Canciones que te gustan</a>
-          </li>
-          <hr>
-          <li class="nav-item" *ngFor="let element of dataSongs">
-            <a class="nav-link" href="#">
-              {{element.titulo}}
-            </a>
-          </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-plus"></i>
+            Crear playlist</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-heart"></i>
+            Canciones que te gustan</a>
+        </li>
+        <hr>
+        <li class="nav-item" *ngFor="let element of dataSongs">
+          <a class="nav-link" href="#">
+            {{element.titulo}}
+          </a>
+        </li>
 
-        </ul>
+      </ul>
+    </div>
+    <div class="col-sm-10">
+      <div class="text-left ">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb carrusell">
+            <li class="breadcrumb-item active" aria-current="page">
+              <a routerLink="/lista">
+                <i class="fas fa-chevron-left"></i>
+              </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              <a href="">
+                <i class="fas fa-chevron-right"></i>
+              </a>
+            </li>
+            <li class="breadcrumb-item active text-right" aria-current="page">
+              <a href="">
+                <i class="fas fa-user">
+                </i>
+              </a>
+            </li>
+          </ol>
+        </nav>
       </div>
-      <div class="col-sm-10">
-        <div class="text-left ">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb carrusell">
-              <li class="breadcrumb-item active" aria-current="page">
-                <a href="">
-                  <i class="fas fa-chevron-left"></i>
-                </a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                <a href="">
-                  <i class="fas fa-chevron-right"></i>
-                </a>
-              </li>
-              <li class="breadcrumb-item active text-right" aria-current="page">
-                <a href="">
-                  <i class="fas fa-user">
-                  </i>
-                </a>
-              </li>
-            </ol>
-          </nav>
-        </div>
-        <div class="container text-center">
-          <div class="row">
-        <div class="card container-fluid" style="width: 13rem;">
-          <img class="card-img-top" src="assets/Happy.jpg" alt="Card image cap">
-          <div class="card-body">
-            <a routerLink="song/1" class="btn btn-success">Play song</a>
+      <div class="container text-center">
+        <div class="row">
+          <div class="card container-fluid" *ngFor="let element of dataSongs"
+           style="width: 15rem;">
+           <img class="card-img-top" src="{{element.caratula}}" alt="Card image cap">
+            <div class="card-body">
+              <a routerLink="{{element.URL}}" class="btn btn-success">Play song</a>
+            </div>
           </div>
         </div>
-        <div class="card container-fluid" style="width: 13rem;">
-          <img class="card-img-top" src="assets/Starboy.jpg" alt="Card image cap">
-          <div class="card-body">
-            <a routerLink="song/0" class="btn btn-success">Play song</a>
-          </div>
-        </div>
-        <div class="card container-fluid" style="width: 13rem;">
-          <img class="card-img-top" src="assets/RedBone_Come_and_get.jpg" alt="Card image cap">
-          <div class="card-body">
-            <a routerLink="song/2" class="btn btn-success">Play song</a>
-          </div>
-        </div>
-        <div class="card container-fluid" style="width: 13rem;">
-          <img class="card-img-top" src="assets/Undisclosed_desires.jpg" alt="Card image cap">
-          <div class="card-body">
-            <a routerLink="song/3" class="btn btn-success">Play song</a>
-          </div>
-        </div>
-        </div>
-      </div>
       </div>
     </div>
   </div>
+</div>
 <app-footer></app-footer>
